@@ -1,3 +1,21 @@
+## 1.3.0 - thanks to @astashov 
+* New and improved test suite
+* Fix line tracing
+* Fix source reloading
+* Fix error message of jump command
+* Fix trace and trace all commands
+* Fix -d flag to irb command
+* Fix method command being detected
+
+## 1.2.4
+* Bump ruby_core_source dependency
+
+## 1.2.3
+* Bump ruby_core_source dependency
+
+## 1.2.2
+* Bump ruby_core_source dependency
+
 ## 1.2.1
 * Bump ruby_core_source dependency
 

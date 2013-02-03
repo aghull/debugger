@@ -46,7 +46,7 @@ module Debugger
     end
 
     def at_tracing(file, line)
-      @tracing_started = true if File.identical?(file, File.join(Debugger::INITIAL_DIR, Debugger::PROG_SCRIPT))
+      @tracing_started = File.identical?(file, Debugger::PROG_SCRIPT)
       handler.at_tracing(self, file, line) if @tracing_started
     end
 
@@ -91,6 +91,8 @@ module Debugger
     end
 
     def source_reload
+      Object.send(:remove_const, "SCRIPT_LINES__") if Object.const_defined?("SCRIPT_LINES__")
+      Object.const_set("SCRIPT_LINES__", {})
       LineCache::clear_file_cache
     end
 
